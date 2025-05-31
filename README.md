@@ -147,3 +147,5 @@ A Python-based trading strategy backtester with a Streamlit interface, fetching 
 
 For support, check logs or contact the developer.
 
+## DEMO
+https://github.com/user-attachments/assets/b62f4b66-9d02-4dbb-9307-84750e724262
