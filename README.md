@@ -106,38 +106,6 @@ A Python-based trading strategy backtester with a Streamlit interface, fetching 
    - **MACD**: Verify trades on MACD EMA crossovers.
    - **RSI-EMA**: Confirm buys on RSI > 30 and close > EMA(21), sells on RSI < 70 or close < EMA(21).
 
-## Troubleshooting
-
-1. **Binary Incompatibility Error** (`numpy.dtype size changed`):
-   - **Cause**: Mismatch between `numpy` and `pandas`.
-   - **Fix**:
-     - Delete virtual environment:
-       ```cmd
-       rmdir /s virt
-       python -m venv virt
-       virt\Scripts\activate
-       ```
-     - Reinstall:
-       ```cmd
-       pip install -r requirements.txt
-       ```
-
-2. **AttributeError: 'float' object has no attribute 'shift'**:
-   - **Cause**: Incorrect use of `.shift()` in strategy functions.
-   - **Fix**: Ensure `backtester.py` uses updated `macd_strategy` and `rsi_ema_strategy` functions with `Series` operations.
-
-3. **API Failure**:
-   - Verify internet: `curl https://api.binance.com/api/v3/ping`.
-   - Check logs.
-
-4. **No Trades**:
-   - Ensure strategies are selected (Streamlit) or run both (standalone).
-   - Verify data fetch (logs show candle count).
-
-5. **Streamlit Not Loading**:
-   - Check port 8501: `netstat -ano | findstr 8501`.
-   - Free port: `taskkill /PID <pid> /F`.
-
 ## Notes
 
 - **Data**: Up to 5000 1-minute BTCUSDT candles.
